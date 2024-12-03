@@ -1,0 +1,178 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #03810b;
+}
+/*Header Content */
+.header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(3, 84, 3);
+    height: 140px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/****Navigationbar****/
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: green;
+    opacity: 0.8;
+    overflow: hidden;
+    padding: 0px 20px;
+}
+
+nav img {
+    height: 60px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.headline {
+    font-family: "Poppins", sans-serif;
+    font-weight: 1000;
+    font-style:bold;
+    margin: 5px;
+    color: white;
+}
+
+.line {
+    height: 3px;
+    background-color: rgb(227, 223, 2);
+    width: 180px;
+    border-radius: .5px;
+    animation: move 2s ease  infinite;
+}
+
+@keyframes move {
+    0%{
+        width: 180px;
+    }
+    50%{
+        width: 20px;
+    }
+    100%{
+        width: 180px;
+    }
+}
+
+
+.hr {
+    border: 1px solid rgb(160, 161, 165);
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
+
+.container {
+    display: flex;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.container div {
+    height: 300px;
+    width: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.container div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Gallery Container */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Individual Frame */
+.frame {
+    position: relative;
+    height: auto;
+    width: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Overlay Items */
+.items {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.items h2 {
+    font-size: auto;
+    margin-bottom: 10px;
+}
+
+.items p {
+    font-size: auto;
+    margin: 0;
+}
+
+/* Hover Effect */
+.frame:hover {
+    transform: scale(1.05);
+}
+
+.frame:hover .items {
+    opacity: 1;
+}
